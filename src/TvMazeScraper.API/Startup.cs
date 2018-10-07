@@ -35,7 +35,6 @@ namespace TvMazeScraper.API
                     {
                         options.SerializerSettings.DateFormatString = "yyyy-MM-dd";
                     });
-            var x = Configuration.GetSection("ConnectionStrings").GetValue(typeof(string), "DefaultConnection");
             var connectionStr = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<TVMazeScrapperDBContext>(options => options.UseSqlServer(connectionStr));
             services.AddScoped<IShowRepository, ShowRepository>();
@@ -66,7 +65,7 @@ namespace TvMazeScraper.API
         {
             using (var scope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
             {
-                scope.ServiceProvider.GetRequiredService<TVMazeScrapperDBContext>().Database.Migrate();
+                scope.ServiceProvider.GetRequiredService<TVMazeScrapperDBContext>().Database.EnsureCreated();
             }
         }
     }

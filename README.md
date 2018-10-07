@@ -1,5 +1,5 @@
 # TVMaze Scraper
-Project scrapes all shows (incl. casts) from http://www.tvmaze.com/api, persists in local SQL Server database, and provides WebAPI for the data.
+Project scrapes all tv shows (incl. casts list) from http://www.tvmaze.com/api, persists in local SQL Server database, and provides WebAPI for the data.
 
 Technologies: .Net Core 2.1 and Entity Framework Core
 

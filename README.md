@@ -14,3 +14,10 @@ Technologies: .Net Core 2.1 and Entity Framework Core
           
   * TVMazeScraper.Console: Console application for invoking TVMazeScraper library to scrape shows
   * TVMazeScraper.Data: Data access library which contains repository classes for db operations.
+
+## How to run
+ 1. Run TVMazeScraper.Console and scrape all data
+ 2. Run TvMazeScraper.API
+ 3. open http://localhost:50479/swagger/index.html for testing API on any browser 
+ or 
+ call http://localhost:50479/api/shows via any http tool (such as Fiddler) 
